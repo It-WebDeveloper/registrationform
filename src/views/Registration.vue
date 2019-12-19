@@ -132,10 +132,10 @@ export default {
 			}
 			return 'ok'
 		},
-		// Получить информция о событии _REGFORM.GETEVENTINFO
+		// Получить информция о событии
 		getEventInfo(eventid, lang) {
 			axios.post(window.myConfig.WsUrl, {
-				calcId: "_REGFORM.GETEVENTINFO",
+				calcId: window.myConfig.ws.getEventInfo,
 				args: JSON.stringify({ eventGuid: eventid, lang}),
 				ticket: ''
 			})
@@ -170,11 +170,11 @@ export default {
 			})
 		},
 
-		// Вызвать веб-расчет _REGFORM.HASREGISRATION
+		// Уже есть регистрация
 		hasRegistered ( eventid, personid, lang ) {
 			axios.default.withCredentials = true;
 			axios.post(window.myConfig.WsUrl, {
-				calcId: '_REGFORM.HASREGISRATION',
+				calcId: window.myConfig.ws.hasRegistration,
 				args: JSON.stringify({ eventGuid: eventid, personGuid: personid, lang}),
 				ticket: ''
 			})

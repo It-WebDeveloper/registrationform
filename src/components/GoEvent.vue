@@ -54,7 +54,7 @@ export default {
 		// 
 		getEventLink: function (eventGuid, personGuid, clientInfo) {
 			axios.post(window.myConfig.WsUrl, {
-				calcId: '_REGFORM.GOEVENT',
+				calcId: window.myConfig.ws.goEvent,
 				args: JSON.stringify({eventGuid, personGuid, clientInfo}),
 				ticket: ''
 			})

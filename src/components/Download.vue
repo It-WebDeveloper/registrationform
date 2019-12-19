@@ -73,7 +73,7 @@ export default {
 		},
 		getLinkForDownload( eventGuid, personGuid ) {
 			axios.post(window.myConfig.WsUrl, {
-				calcId: '_REGFORM.GETFILELINK',
+				calcId: window.myConfig.ws.getFile,
 				args: JSON.stringify({eventGuid, personGuid}),
 				ticket: ''
 			})
